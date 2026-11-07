@@ -1,0 +1,29 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>{{ store.name }}</h4>
+      <p>{{ store.description }}</p>
+    </div>
+    <div>
+      <h4>روابط مفيدة</h4>
+      <ul>
+        {% for page in pages %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h4>طرق الدفع</h4>
+      <salla-payments></salla-payments>
+    </div>
+    <div>
+      <h4>تواصل معنا</h4>
+      <salla-social></salla-social>
+      {% set wa = theme.settings.get('whatsapp') %}
+      {% if wa %}
+        <a class="wa-link" href="https://wa.me/{{ wa }}">واتساب</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="copyright">© {{ store.name }}</div>
+</footer>

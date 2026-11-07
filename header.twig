@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="container header-row">
+    <a href="{{ store.url }}" class="brand">
+      {% if store.logo %}
+        <img src="{{ store.logo }}" alt="{{ store.name }}">
+      {% else %}
+        <span>{{ store.name }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="header-actions">
+      <a href="{{ link('/') }}" class="icon-btn" aria-label="الرئيسية">⌂</a>
+      <a href="{{ link('cart') }}" class="icon-btn cart-btn" aria-label="السلة">
+        🛒 <salla-cart-summary></salla-cart-summary>
+      </a>
+      <salla-user-menu></salla-user-menu>
+    </nav>
+  </div>
+
+  <div class="cat-bar">
+    <div class="container cat-scroll">
+      {% for category in categories %}
+        <a href="{{ category.url }}" class="cat-chip">{{ category.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</header>

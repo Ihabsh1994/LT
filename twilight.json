@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "theme_name": "ثيم البطاقات الرقمية",
+  "repo_url": "https://github.com/YOUR-USERNAME/cards-theme",
+  "support_url": "https://salla.dev",
+  "settings": [
+    { "type": "string", "label": "اللون الأساسي", "id": "primary_color", "format": "color", "value": "#5b2eff" },
+    { "type": "string", "label": "لون التمييز", "id": "accent_color", "format": "color", "value": "#c6f432" },
+    { "type": "string", "label": "لون الخلفية الداكنة", "id": "dark_color", "format": "color", "value": "#0f1233" },
+    { "type": "boolean", "label": "إظهار الشريط العلوي", "id": "show_announcement", "format": "switch", "selected": true },
+    { "type": "string", "label": "نص الشريط العلوي", "id": "announcement_text", "format": "text", "value": "شحن فوري لجميع البطاقات الرقمية ⚡" },
+    { "type": "string", "label": "رقم واتساب (بدون +)", "id": "whatsapp", "format": "text", "value": "" },
+    { "type": "string", "label": "نص التسليم الفوري", "id": "instant_delivery_text", "format": "text", "value": "يصلك الكود فوراً على بريدك وفي صفحة طلباتك بعد الدفع" }
+  ],
+  "features": [],
+  "components": []
+}

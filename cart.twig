@@ -1,0 +1,15 @@
+{% extends 'layouts.master' %}
+
+{% block content %}
+<section class="section">
+  <div class="container cart-wrap">
+    <h1>سلة المشتريات</h1>
+    <salla-cart-items></salla-cart-items>
+    <div class="cart-summary">
+      <salla-cart-summary></salla-cart-summary>
+      <salla-coupon></salla-coupon>
+      <salla-button href="{{ link('checkout') }}" width="wide" color="primary">إتمام الطلب</salla-button>
+    </div>
+  </div>
+</section>
+{% endblock %}

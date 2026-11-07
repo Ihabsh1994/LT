@@ -1,0 +1,48 @@
+{% extends 'layouts.master' %}
+
+{% block content %}
+<section class="section product-page">
+  <div class="container product-grid">
+
+    <div class="product-media">
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+
+    <div class="product-buy">
+      <span class="badge">مناسبة للإهداء</span>
+      <h1>{{ product.name }}</h1>
+
+      {# الخطوة 1 و 2: خيارات المنتج في سلة (بلد الحساب / الفئة) تظهر كباقات قابلة للاختيار #}
+      <div class="step-card packages">
+        <h3 class="step-title">اختر الباقة</h3>
+        <salla-product-options
+          product-id="{{ product.id }}"
+          options='{{ product.options | json_encode | raw }}'>
+        </salla-product-options>
+      </div>
+
+      <div class="price-box">
+        <span class="price-label">السعر</span>
+        <strong class="price">{{ product.formatted_price }}</strong>
+      </div>
+
+      <div class="delivery-note">⚡ {{ theme.settings.get('instant_delivery_text') }}</div>
+
+      <div class="buy-row">
+        <salla-quantity-input product-id="{{ product.id }}"></salla-quantity-input>
+        <salla-add-product-button
+          product-id="{{ product.id }}"
+          product-status="{{ product.status }}"
+          product-type="{{ product.type }}"
+          width="wide">
+        </salla-add-product-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container product-details">
+    <h3>وصف المنتج</h3>
+    <div class="rich">{{ product.description | raw }}</div>
+  </div>
+</section>
+{% endblock %}

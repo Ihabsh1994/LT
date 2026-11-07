@@ -1,0 +1,11 @@
+{
+  "name": "cards-theme",
+  "version": "1.0.0",
+  "description": "ثيم سلة للبطاقات الرقمية والشحن الفوري",
+  "scripts": {
+    "preview": "salla theme preview"
+  },
+  "devDependencies": {
+    "@salla.sa/cli": "latest"
+  }
+}

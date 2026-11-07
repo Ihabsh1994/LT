@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ user.language_code }}" dir="{{ user.language_dir }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  {% hook 'head:start' %}
+  <link rel="stylesheet" href="{{ 'app.css' | asset }}">
+  <style>
+    :root {
+      --primary: {{ theme.settings.get('primary_color', '#5b2eff') }};
+      --accent: {{ theme.settings.get('accent_color', '#c6f432') }};
+      --dark: {{ theme.settings.get('dark_color', '#0f1233') }};
+    }
+  </style>
+  {% hook 'head:end' %}
+</head>
+<body class="theme-cards">
+  {% hook 'body:start' %}
+
+  {% if theme.settings.get('show_announcement') %}
+    <div class="announce">{{ theme.settings.get('announcement_text') }}</div>
+  {% endif %}
+
+  {% include 'partials.header' %}
+
+  <main class="site-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials.footer' %}
+
+  {% hook 'body:end' %}
+  <script src="{{ 'app.js' | asset }}"></script>
+</body>
+</html>
